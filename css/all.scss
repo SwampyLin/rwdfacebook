@@ -1,0 +1,134 @@
+$content-max-width: 1024px;
+$color-blue: #3b5998;
+$color-white: #fff;
+$color-black: #555;
+$break-width: 800px;
+
+body,
+html {
+  margin: unset;
+  padding: unset;
+  background-color: lighten($color-blue, 50%);
+  font-famimy: 微軟正黑體;
+}
+
+.container {
+  max-width: $content-max-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.topbar {
+  background-color: $color-blue;
+  height: 50px;
+  .icon {
+    height: 30px;
+    margin: 10px;
+    vertical-align: middle;
+  }
+  input {
+    height: 30px;
+    width: 300px;
+    margin: 10px 10px 10px unset;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+  }
+}
+
+.cover {
+  height: 330px;
+  background-image: url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1F415990EF82D239C5F7031EC5E09ECFCE2B22A05D70D8554DBB659315F450C5/scale?width=1200&aspectRatio=1.78&format=jpeg');
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.midbar {
+  height: 50px;
+  background-color: $color-white;
+  position: relative;
+  .personimg {
+    width: 150px;
+    height: 150px;
+    background-image: url('https://cf.shopee.tw/file/5ad692f058390338909c435dad79469d');
+    background-size: 100% 100%;
+    border: solid 4px $color-white;
+    top: -130px;
+    left: 20px;
+    position: absolute;
+    .names {
+      color: $color-white;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+  }
+}
+
+.bottombar {
+  margin-top: 10px;
+  width: 35%;
+  min-width: 350px;
+  padding: 20px;
+  font-size: 0.875rem;
+  line-height: 25px;
+  background-color: $color-white;
+}
+//文字
+h2 {
+  margin: unset;
+  font-size: 2rem;
+}
+h5 {
+  margin: unset;
+  font-size: 1rem;
+}
+//icon
+i {
+  width: 20px;
+  vertical-align: middle;
+}
+//RWD
+@media screen and (max-width: $break-width) {
+  .topbar {
+    height: 60px;
+    .icon {
+      height: 40px;
+    }
+    input {
+      height: 30px;
+      width: calc(100% - 40px - 60px);
+      background-color: darken($color-blue, 10);
+      color: $color-white;
+    }
+  }
+  .midbar {
+    height: 150px;
+    .personimg {
+      width: 160px;
+      left: 50%;
+      transform: translateX(-50%);
+      .names {
+        right: initial;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        top: 110%;
+        color: $color-black;
+      }
+    }
+  }
+  .bottombar {
+    margin: unset;
+    width: 100%;
+    box-sizing: border-box;
+    p {
+      border-top: solid 1px lighten($color-black, 40);
+      padding-top: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 14px;
+    }
+  }
+}
